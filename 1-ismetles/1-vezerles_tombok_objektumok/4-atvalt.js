@@ -10,5 +10,5 @@ function atvalt(n) {
 
 // B. Szabolcs
 function atvalt2(n) {
-    return n.toString(2);
+    return parseInt(n.toString(2));
 }

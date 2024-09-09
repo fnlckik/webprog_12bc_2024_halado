@@ -1,7 +1,7 @@
 function hatvany(a, k) {
     if (k === 0) return 1;
 
-    let n = k < 0 ? -k : k;
+    const n = k < 0 ? -k : k;
 
     let h = 1;
     for (let i = 0; i < n; i++) {
