@@ -6,6 +6,11 @@ const points = [
     {x: -1, y: 2}
 ];
 
-function perimeter(points) {
-    
+function perimeter(pontok) {
+    let osszeg = 0;
+    for (let i = 0; i<pontok.length-1; i++){
+        osszeg += distance(pontok[i], pontok[i+1]);
+    }
+    osszeg += distance(pontok[0], pontok[pontok.length-1])
+    return osszeg;
 }
