@@ -12,20 +12,18 @@ function handleGuess() {
     const input = document.querySelector("input");
     const guess = parseInt(input.value);
 
-    const li = document.createElement("li");
+    const ol = document.querySelector("ol");
     if (guess < n) {
-        li.innerText = `Nagyobb, mint ${guess}!`;
+        ol.innerHTML += `<li>Nagyobb, mint ${guess}!</li>`;
     } else if (guess > n) {
-        li.innerText = `Kisebb, mint ${guess}!`;
+        ol.innerHTML += `<li>Kisebb, mint ${guess}!</li>`;
     } else {
-        li.innerText = "Kitaláltad!";
+        ol.innerHTML += "<li>Kitaláltad!</li>";
         button.removeEventListener("click", handleGuess);
         button.disabled = true;
         input.value = "";
         input.disabled = true;
     }
-    const ul = document.querySelector("ol");
-    ul.appendChild(li);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", handleGuess);
