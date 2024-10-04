@@ -1,0 +1,34 @@
+body{
+    padding: 1em;
+}
+
+button {
+    padding: 0.5em;
+}
+
+table {
+    margin: 2em auto;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.8s;
+}
+
+br {
+    content: "";
+    display: block;
+    margin: 1em 0;
+}
+
+input[type="number"] {
+    width: 5em;
+    padding: 0.25em;
+}
+
+.oszthato {
+    background-color: rgba(163, 255, 163, 0.7);
+}

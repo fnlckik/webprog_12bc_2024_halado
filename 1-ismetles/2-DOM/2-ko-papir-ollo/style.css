@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Szabályozva a képek maximális mérete! */
+.img-height {
+    max-height: 7em;
+    display: block;
+    margin: auto;
+}
+
+/* Flexbox */
+#valasztas {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+#valasztas img {
+    cursor: pointer;
+    padding: 0.25em;
+    transition: 250ms;
+}
+
+/* radius, shadow, transition */
+#valasztas img:hover, .active {
+    border: 1px solid black;
+    border-radius: 1em;
+    box-shadow: 2px 2px 5px black;
+    padding: 0.75em;
+    transition: 250ms;
+}
+
+.active {
+    background-color: lightgreen;
+}

@@ -1,0 +1,47 @@
+body {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+}
+
+label input {
+    vertical-align: middle;
+    margin: 0 12px;
+    padding: 0;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+table {
+    margin: 2em auto;
+    table-layout: fixed;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+
+td {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+}
+
+td:first-child {
+    border-right: 3px solid black;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+}
+
+tr:first-child {
+    border-bottom: 3px solid black;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+}
