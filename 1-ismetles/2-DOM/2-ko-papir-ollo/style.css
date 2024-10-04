@@ -35,3 +35,12 @@
 .active {
     background-color: lightgreen;
 }
+
+button {
+    padding: 0.5em;
+    display: block;
+    margin: 1em auto;
+    font-size: 1.5em;
+    border-radius: 25px;
+    cursor: pointer;
+}
