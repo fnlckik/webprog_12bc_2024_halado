@@ -1,4 +1,4 @@
-// this: eseményt kiváltó objektum
+// this: eseményt kezelő objektum
 function handleChoose() {
     // this.className = "active"; ROSSZ!
     // this.className += " active";
@@ -15,6 +15,20 @@ for (const image of images) {
 // this.classList.add("active")
 // this.classList.remove("active")
 // this.classList.contains("active")
+
+function decideWinner(human, computer) {
+    if (human === computer) {
+        return "Döntetlen!";
+    } else if (human === "ko" && computer === "ollo") {
+        return "Játékos nyert!";
+    } else if (human === "papir" && computer === "ko") {
+        return "Játékos nyert!";
+    } else if (human === "ollo" && computer === "papir") {
+        return "Játékos nyert!";
+    } else {
+        return "Számítógép nyert!";
+    }
+}
 
 // randint(1, 3):
 // Math.floor(Math.random() * 3) + 1;
@@ -44,11 +58,14 @@ function randomItem() {
     return items[r];
 }
 
-function handleEnd() {
+function endGame(human, computer) {
     button.removeEventListener("click", handleStart);
     for (const image of images) {
         image.removeEventListener("click", handleChoose);
     }
+    const winner = decideWinner(human, computer);
+    const result = document.querySelector("#eredmeny");
+    result.innerText = winner;
 }
 
 function createImage(item) {
@@ -58,20 +75,21 @@ function createImage(item) {
     return img;
 }
 
-function saveImage(img) {
+function insertImage(img) {
     const eredmeny = document.querySelector("#eredmeny");
     const body = document.body;
     body.insertBefore(img, eredmeny); // szulo.insertBefore(gyerek, testver)
 }
 
 function handleStart() {
-    if (document.querySelectorAll(".active").length === 0) {
+    const human = document.querySelectorAll(".active");
+    if (human.length === 0) {
         return;
     }
     const computer = randomItem();
     const img = createImage(computer);
-    saveImage(img);
-    handleEnd();
+    insertImage(img);
+    endGame(human[0].alt, computer);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", handleStart);
