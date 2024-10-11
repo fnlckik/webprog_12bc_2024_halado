@@ -3,7 +3,7 @@
 Anna és Béla egy játékot játszanak. Kezdetben az asztalon van valamennyi pénz, és felváltva vesznek el belőle 500 Ft és 3000 Ft közötti értéket, de csakis 500-zal oszthatót! A győztes aki  az utolsó pénzt el tudja venni!
 
 <p align="center">
-    <img src="./sample/start.png" height="150">
+    <img src="./sample/start.png" height="120">
 </p>
 
 Készítsd el a játékot az alábbi leírás alapján! A változók neveit tetszőlegesen megválaszthatod, de a **függvények neveit pontosan a feladatok szerint** add meg!
@@ -17,18 +17,18 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
 
     Ezeket javasolt globálisan deklarálni és kezdőértéket adni nekik!
 
-1. Az asztalon lévő pénz kezdőértéke 15 000 Ft és 20 000 Ft közötti véletlenszerű érték legyen, de csakis 1000-rel osztható! (Tehát összesen 6 fajta lehetőségünk van.)
+1. Az asztalon lévő pénz kezdőértéke 15000 Ft és 20000 Ft közötti véletlenszerű érték legyen, de csakis 1000-rel osztható! (Tehát összesen 6 fajta lehetőségünk van.)
 
 2. Az "Új játék" nevű gombra kattintáskor indítsuk el a játékot. Az eseménykezelő neve `startGame()` legyen! Feladatai a következők:
 
     a. A `modes` osztályba tartozó elemet rejtsük el, a `game` osztályba tartozót jelenítsük meg!
 
-    b. Megjeleníti az állapotot leíró változókat a megfelelő helyen! (Mennyi pénz van az asztalon, Annánál, Bélánál?)
+    b. Kiírja az állapotot leíró változókat a megfelelő helyre! (Mennyi pénz van az asztalon, Annánál, Bélánál?)
 
     c. Meghív egy `renderMoney()` nevű függvényt, amelyet a következő feladatban kell megírni!
 
     <p align="center">
-    <img src="./sample/startGame.png" height="300">
+    <img src="./sample/startGame.png" height="250">
     </p>
 
 3. A `renderMoney()` az asztalon lévő összeget jeleníti meg 5000 Ft, 2000 Ft és 500 Ft-os címletekkel egy listában képeket generálva!
@@ -39,13 +39,14 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     - 3 darab 5000 Ft
     - 1 darab 2000 Ft
     - 2 darab 500 Ft
-    Tehát ameddig csak lehet a nagy címleteket használd, majd utána jöhetnek a kisebbek!
+
+    Tehát a nagy címleteket használd ameddig csak lehet, majd utána jöhetnek a kisebbek!
 
     <p align="center">
-    <img src="./sample/renderMoney.png" height="150">
+    <img src="./sample/renderMoney.png" height="120">
     </p>
 
-4. Bővítsd a `startGame()` eseménykezelőt, hogy az "Összeg választása" gombra kattintva egy `takeMoney()` nevű eseménykezlő fusson le!
+4. Bővítsd a `startGame()` függvényt, hogy az "Összeg választása" gombra kattintva egy `takeMoney()` nevű eseménykezelő fusson le!
 
     a. Olvassa ki a választott összeget!
 
@@ -54,7 +55,7 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     c. Ügyelj arra is, hogy ne csak a JavaScript változók értékeit módosítsd, hanem a felhasználó is láthassa a változásokat! Az asztalon lévő pénzt is újra jelenítsd meg!
 
     <p align="center">
-    <img src="./sample/takeMoney.png" height="300">
+    <img src="./sample/takeMoney.png" height="250">
     </p>
 
 5. Vizuálisan is jelezd, hogy melyik játékos következik! Az oldal tetején látható ikonok közül a megfelelő kapjon `current-player` osztályt! Ügyelj rá, hogy ez már a kezdő játékos esetében is megtörténjen!
@@ -82,5 +83,5 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     c. Győzelem esetén jelenítsd meg azt is, hogy Anna és Béla az eddigi játékok során összesen hányszor nyert!
 
     <p align="center">
-    <img src="./sample/winner.png" height="300">
+    <img src="./sample/winner.png" height="250">
     </p>
