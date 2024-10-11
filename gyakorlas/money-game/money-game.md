@@ -3,7 +3,7 @@
 Anna és Béla egy játékot játszanak. Kezdetben az asztalon van valamennyi pénz, és felváltva vesznek el belőle 500 Ft és 3000 Ft közötti értéket, de csakis 500-zal oszthatót! A győztes aki  az utolsó pénzt el tudja venni!
 
 <p align="center">
-    <img src="./sample/start.png" height="250">
+    <img src="./sample/start.png" height="150">
 </p>
 
 Készítsd el a játékot az alábbi leírás alapján! A változók neveit tetszőlegesen megválaszthatod, de a **függvények neveit pontosan a feladatok szerint** add meg!
@@ -28,7 +28,7 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     c. Meghív egy `renderMoney()` nevű függvényt, amelyet a következő feladatban kell megírni!
 
     <p align="center">
-    <img src="./sample/startGame.png" height="500">
+    <img src="./sample/startGame.png" height="300">
     </p>
 
 3. A `renderMoney()` az asztalon lévő összeget jeleníti meg 5000 Ft, 2000 Ft és 500 Ft-os címletekkel egy listában képeket generálva!
@@ -42,7 +42,7 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     Tehát ameddig csak lehet a nagy címleteket használd, majd utána jöhetnek a kisebbek!
 
     <p align="center">
-    <img src="./sample/renderMoney.png" height="250">
+    <img src="./sample/renderMoney.png" height="150">
     </p>
 
 4. Bővítsd a `startGame()` eseménykezelőt, hogy az "Összeg választása" gombra kattintva egy `takeMoney()` nevű eseménykezlő fusson le!
@@ -54,7 +54,7 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     c. Ügyelj arra is, hogy ne csak a JavaScript változók értékeit módosítsd, hanem a felhasználó is láthassa a változásokat! Az asztalon lévő pénzt is újra jelenítsd meg!
 
     <p align="center">
-    <img src="./sample/takeMoney.png" height="500">
+    <img src="./sample/takeMoney.png" height="300">
     </p>
 
 5. Vizuálisan is jelezd, hogy melyik játékos következik! Az oldal tetején látható ikonok közül a megfelelő kapjon `current-player` osztályt! Ügyelj rá, hogy ez már a kezdő játékos esetében is megtörténjen!
@@ -82,5 +82,5 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     c. Győzelem esetén jelenítsd meg azt is, hogy Anna és Béla az eddigi játékok során összesen hányszor nyert!
 
     <p align="center">
-    <img src="./sample/winner.png" height="500">
+    <img src="./sample/winner.png" height="300">
     </p>
