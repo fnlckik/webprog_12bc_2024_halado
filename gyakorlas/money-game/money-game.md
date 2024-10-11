@@ -42,7 +42,7 @@ Készítsd el a játékot az alábbi leírás alapján! A változók neveit tets
     Tehát ameddig csak lehet a nagy címleteket használd, majd utána jöhetnek a kisebbek!
 
     <p align="center">
-    <img src="./sample/rendermoney.png" height="250">
+    <img src="./sample/renderMoney.png" height="250">
     </p>
 
 4. Bővítsd a `startGame()` eseménykezelőt, hogy az "Összeg választása" gombra kattintva egy `takeMoney()` nevű eseménykezlő fusson le!
