@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pénzjáték</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <span id="anna-icon">👩</span>
+        <h1>Pénzt és győzelmet!</h1>
+        <span id="bela-icon">👦</span>
+    </header>
+
+    <div class="modes">
+        <button class="new-game">Új játék</button>
+        <button class="continue-game">Játék folytatása</button>
+    </div>
+
+    <div class="game">
+        <div>
+            <h2>Maradék pénz: <span id="remaining-money">???</span> Ft</h2>
+            <ul id="money-images">
+
+            </ul>
+        </div>
+
+        <div id="player-turn">
+            <select>
+                <option value="1">500 Ft</option>
+                <option value="2">1000 Ft</option>
+                <option value="3">1500 Ft</option>
+                <option value="4">2000 Ft</option>
+                <option value="5">2500 Ft</option>
+                <option value="6">3000 Ft</option>
+            </select>
+            <button class="take-money">Összeg választása</button>
+        </div>
+
+        <div id="scores">
+            <h2>Anna: <span id="anna-money">???</span> Ft</h2>
+            <h2>Béla: <span id="bela-money">???</span> Ft</h2>
+        </div>
+
+        <button class="save-game">Játék mentése</button>
+
+        <div class="winner">
+            <h2>🏆 <span></span> nyert! 🏆</h2>
+            <p>Anna győzelmek: <span id="anna-wins">0</span></p>
+            <p>Béla győzelmek: <span id="bela-wins">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

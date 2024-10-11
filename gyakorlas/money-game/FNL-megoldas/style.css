@@ -1,0 +1,155 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game, .modes {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+}
+
+.game { 
+    text-align: center;
+    width: 80%;
+    position: relative;
+    display: none;
+}
+
+.modes {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.winner {
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    border-radius: 0.5em;
+    padding: 2em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+header span {
+    padding: 0.25em;
+    font-size: 3em;
+}
+
+.game div:first-of-type {
+    margin-bottom: 20px;
+    padding: 1px;
+}
+
+#money-images img {
+    height: 3rem;
+    width: 6.75rem;
+    margin: 5px;
+}
+
+ul#money-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+#money-images li {
+    list-style: none;
+    width: fit-content;
+}
+
+#player-turn, #scores {
+    margin: 20px 0;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.5em;
+}
+
+h1 {
+    padding: 1em;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+br {
+    content: "";
+    display: block;
+    margin: 1em auto;
+}
+
+.show {
+    display: flex;
+}
+
+.current-player {
+    background-color: lightgreen;
+    border: 1px solid black;
+}
+
+@media (max-width: 720px) {
+    body {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 0.45em;
+    }
+}
