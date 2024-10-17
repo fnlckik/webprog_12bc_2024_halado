@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    background-color: #8ca0ff;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #677bff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #677bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #5361cc;
+}
+
+td.revealed {
+    background-color: white;
+}
+
+/* Akadályozzuk meg a kijelölést! */
+td {
+    user-select: none;
+}

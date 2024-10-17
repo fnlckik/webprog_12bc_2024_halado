@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Regisztráció</h2>
+        <form action="index.html" method="post">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="password">Jelszó:</label>
+            <p id="password-message" class="error hidden">A jelszó legalább 8 karakter hosszú kell legyen!</p>
+            <input type="password" id="password" name="password">
+
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Elfogadom a felhasználási feltételeket</label>
+            </div>
+            <p id="terms-message" class="terms error hidden">Kötelező elfogadni a feltételeket!</p>
+
+            <button type="submit">Regisztrálok</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
