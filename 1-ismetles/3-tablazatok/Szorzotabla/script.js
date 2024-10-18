@@ -22,14 +22,15 @@ function generateTable() {
     span.innerText = n;
 
     const table = document.querySelector("table");
-    table.innerHTML = "";
+    let data = "";
     for (let i = 0; i < n; i++) {
-        table.innerHTML += "<tr>";
+        data += "<tr>";
         for (let j = 0; j < n; j++) {
-            table.innerHTML += `<td>${(i+1)*(j+1)}</td>`;
+            data += `<td>${(i+1)*(j+1)}</td>`;
         }
-        table.innerHTML += "</tr>";
+        data += "</tr>";
     }
+    table.innerHTML = data;
 }
 const input = document.querySelector("input[type=range]");
 input.addEventListener("input", generateTable);
