@@ -1,12 +1,14 @@
 // HTML table <=> JS matrix
 let m = [];
+const table = document.querySelector("table");
+
+// -------------------------------------------------
 
 function randint(a, b) {
     return Math.floor(Math.random() * (b-a+1)) + a;
 }
 
 function showTable() {
-    const table = document.querySelector("table");
     let data = "";
     for (let i = 0; i < 10; i++) {
         data += "<tr>";
@@ -16,6 +18,7 @@ function showTable() {
         data += "</tr>";
     }
     table.innerHTML = data;
+    setClickHandlers();
 }
 
 function generate() {
@@ -40,3 +43,47 @@ function handleLoad() {
     showTable();
 }
 window.addEventListener("load", handleLoad);
+
+/*
+    if (this.classList.contains("oszthato")) {
+        this.classList.remove("oszthato");
+    } else {
+        this.classList.add("oszthato");
+    }
+*/
+function handleClick() {
+    this.classList.toggle("oszthato");
+}
+
+// !!! Ez itt 100 darab eventListener !!!
+function setClickHandlers() {
+    const rows = table.rows;
+    for (const row of rows) {
+        const cells = row.cells;
+        for (const cell of cells) {
+            cell.addEventListener("click", handleClick);
+        }
+    }
+}
+
+/* Petró Ádám => +1 pont */
+/*
+    if (parseInt(cell.innerText) % d === 0) {
+        cell.classList.add("oszthato");
+    } else {
+        cell.classList.remove("oszthato");
+    }
+*/
+function selectNumbers() {
+    const d = parseInt(input.value);
+    const rows = table.rows;
+    for (const row of rows) {
+        const cells = row.cells;
+        for (const cell of cells) {
+            const isDividable = parseInt(cell.innerText) % d === 0;
+            cell.classList.toggle("oszthato", isDividable);
+        }
+    }
+}
+const input = document.querySelector("input");
+input.addEventListener("input", selectNumbers);

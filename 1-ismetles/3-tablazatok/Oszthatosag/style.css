@@ -16,6 +16,7 @@ table, tr, td {
     padding: 0.5em;
     cursor: pointer;
     transition: background-color 0.8s;
+    user-select: none; /* Ne tudjuk kijelölni! */
 }
 
 br {
