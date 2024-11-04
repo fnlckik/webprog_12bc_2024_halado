@@ -17,13 +17,24 @@ function handleClick(e) {
 const ul = document.querySelector("ul");
 ul.addEventListener("click", handleClick);
 
-/*
-function handleClick() {
-    console.log(this.innerText);
+// ----------------------------------------------------------
+
+function swapMovies(li1, li2) {
+    const temp = li1.innerText;
+    li1.innerText = li2.innerText;
+    li2.innerText = temp;
 }
 
-const movies = document.querySelectorAll("li");
-for (const movie of movies) {
-    movie.addEventListener("click", handleClick);
+// azt az <li> elemet tárolja, akire legutóbb kattintottunk
+let first = null;
+function selectMovie(e) {
+    const li = e.target;
+    if (!li.matches("li")) return;
+    if (first) {
+        swapMovies(first, li);
+        first = null;
+    } else {
+        first = li;
+    }
 }
-*/
+ul.addEventListener("click", selectMovie);
