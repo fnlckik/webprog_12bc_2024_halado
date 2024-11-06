@@ -20,9 +20,14 @@ ul.addEventListener("click", handleClick);
 // ----------------------------------------------------------
 
 function swapMovies(li1, li2) {
-    const temp = li1.innerText;
-    li1.innerText = li2.innerText;
-    li2.innerText = temp;
+    const firstNumber = li1.innerText.split(". ")[0]; // "1"
+    const firstName = li1.innerText.split(". ")[1]; // "Vasember"
+
+    const secondNumber = li2.innerText.split(". ")[0]; // "2"
+    const secondName = li2.innerText.split(". ")[1]; // "Thor"
+    
+    li1.innerText = `${firstNumber}. ${secondName}`;
+    li2.innerText = `${secondNumber}. ${firstName}`;
 }
 
 // azt az <li> elemet tárolja, akire legutóbb kattintottunk
