@@ -34,17 +34,33 @@ function swapMovies(li1, li2) {
 }
 
 // azt az <li> elemet tárolja, akire legutóbb kattintottunk
+/*
+if (first && first !== li) {
+    li.classList.add("selected");
+    swapMovies(first, li);
+    first = null;
+} else if (first === li) {
+    li.classList.remove("selected");
+    first = null;
+} else {
+    first = li;
+    li.classList.add("selected");
+}
+*/
 let first = null;
 function selectMovie(e) {
     const li = e.target;
     if (!li.matches("li")) return;
-    if (first && first !== li) {
+    if (!first) { // Első kattintásunk
+        first = li;
+        li.classList.add("selected");
+    } else if (first !== li) { // Van másik kiválasztva => cserélni kell
         li.classList.add("selected");
         swapMovies(first, li);
         first = null;
-    } else {
-        first = li;
-        li.classList.add("selected");
+    } else { // A kiválasztott elvetése
+        li.classList.remove("selected");
+        first = null;
     }
 }
 ul.addEventListener("click", selectMovie);
