@@ -56,7 +56,7 @@ ul li {
 
 /* Kiválasztott elem! */
 ul li.selected {
-    background-color: rgba(246, 255, 0, 0.4);
+    background-color: rgba(246, 255, 0);
     color: #000;
     border: 2px solid black;
 }

@@ -11,7 +11,7 @@
 function handleClick(e) {
     const li = e.target.closest("li");
     if (li && li.matches("ul li")) {
-        console.log(li.innerText);
+        // console.log(li.innerText);
     }
 }
 const ul = document.querySelector("ul");
@@ -28,6 +28,9 @@ function swapMovies(li1, li2) {
 
     li1.innerText = `${firstNumber}. ${secondTitle}`;
     li2.innerText = `${secondNumber}. ${firstTitle}`;
+
+    li1.classList.add("swap");
+    li2.classList.add("swap");
 }
 
 // azt az <li> elemet tárolja, akire legutóbb kattintottunk
@@ -35,11 +38,21 @@ let first = null;
 function selectMovie(e) {
     const li = e.target;
     if (!li.matches("li")) return;
-    if (first) {
+    if (first && first !== li) {
+        li.classList.add("selected");
         swapMovies(first, li);
         first = null;
     } else {
         first = li;
+        li.classList.add("selected");
     }
 }
 ul.addEventListener("click", selectMovie);
+
+// Megvárjuk az animáció végét!
+function afterAnimation(e) {
+    if (e.animationName === "swap") {
+        e.target.classList.remove("swap", "selected");
+    }
+}
+ul.addEventListener("animationend", afterAnimation);
