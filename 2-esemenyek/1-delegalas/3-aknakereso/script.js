@@ -81,6 +81,19 @@ function showBoard() {
     }
 }
 
+function revealNeighbors(x, y) {
+    for (let i = x-1; i <= x+1; i++) {
+        for (let j = y-1; j <= y+1; j++) {
+            if (0 <= i && 0 <= j && i < n && j < n && !board[i][j].isReveled) {
+                board[i][j].isReveled = true;
+                if (board[i][j].value === 0) {
+                    revealNeighbors(i, j);
+                }
+            }
+        }
+    }
+}
+
 function handleClick(e) {
     const td = e.target;
     if (!td.matches("td")) return;
@@ -88,6 +101,9 @@ function handleClick(e) {
     const tr = td.parentNode;
     const i = tr.rowIndex; // rowIndex: Hanyadik sor?
     board[i][j].isReveled = true;
+    if (board[i][j].value === 0) {
+        revealNeighbors(i, j);
+    }
     showBoard();
 }
 
