@@ -44,7 +44,8 @@ function createBoard() {
             const field = {
                 value: 0,
                 isMine: false,
-                isReveled: false
+                isReveled: false,
+                isFlagged: false
             };
             row.push(field);
         }
@@ -55,7 +56,8 @@ function createBoard() {
 
 function getText(i, j) {
     const field = board[i][j];
-    if (!field.isReveled) return "";
+    if (field.isFlagged) return "🚩";
+    else if (!field.isReveled) return "";
     else if (field.isMine) return "💣";
     else if (field.value !== 0) return field.value;
     else return "";
@@ -86,6 +88,7 @@ function revealNeighbors(x, y) {
         for (let j = y-1; j <= y+1; j++) {
             if (0 <= i && 0 <= j && i < n && j < n && !board[i][j].isReveled) {
                 board[i][j].isReveled = true;
+                board[i][j].isFlagged = false;
                 if (board[i][j].value === 0) {
                     revealNeighbors(i, j);
                 }
@@ -100,6 +103,7 @@ function handleClick(e) {
     const j = td.cellIndex; // cellIndex: Hanyadik oszlop?
     const tr = td.parentNode;
     const i = tr.rowIndex; // rowIndex: Hanyadik sor?
+    if (board[i][j].isFlagged) return;
     board[i][j].isReveled = true;
     if (board[i][j].value === 0) {
         revealNeighbors(i, j);
@@ -107,11 +111,25 @@ function handleClick(e) {
     showBoard();
 }
 
+function handleFlag(e) {
+    e.preventDefault(); // Ne jelenjen meg a gyorsmenü!
+    const td = e.target;
+    if (!td.matches("td")) return;
+    const j = td.cellIndex;
+    const tr = td.parentNode;
+    const i = tr.rowIndex;
+    if (board[i][j].isReveled) return;
+    board[i][j].isFlagged = !board[i][j].isFlagged;
+    showBoard();
+}
+
+// contextmenu: kattintás jobb gombbal
 function startGame() {
     createBoard();
     showBoard();
     button.removeEventListener("click", startGame);
     table.addEventListener("click", handleClick);
+    table.addEventListener("contextmenu", handleFlag);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", startGame);
