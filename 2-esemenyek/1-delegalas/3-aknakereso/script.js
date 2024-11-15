@@ -43,13 +43,21 @@ function createBoard() {
         for (let j = 0; j < n; j++) {
             const field = {
                 value: 0,
-                isMine: false
+                isMine: false,
+                isReveled: false
             };
             row.push(field);
         }
         board.push(row);
     }
     generateMines();
+}
+
+function getText(i, j) {
+    const field = board[i][j];
+    if (!field.isReveled) return "";
+    else if (field.isMine) return "💣";
+    else if (field.value !== 0) return field.value;
 }
 
 // A mátrix alapján megjelenít egy táblázatot
@@ -61,12 +69,7 @@ function showBoard() {
         const tr = document.createElement("tr");
         for (let j = 0; j < n; j++) {
             const td = document.createElement("td");
-            const field = board[i][j];
-            if (field.isMine) {
-                td.innerText = "💣";
-            } else {
-                td.innerText = field.value;
-            }
+            td.innerText = getText(i, j);
             tr.appendChild(td);
         }
         table.appendChild(tr);
