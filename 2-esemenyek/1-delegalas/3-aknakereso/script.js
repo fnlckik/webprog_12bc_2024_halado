@@ -58,10 +58,14 @@ function getText(i, j) {
     if (!field.isReveled) return "";
     else if (field.isMine) return "💣";
     else if (field.value !== 0) return field.value;
+    else return "";
 }
 
 // A mátrix alapján megjelenít egy táblázatot
 // a játékos számára!
+// if (board[i][j].isReveled) {
+//     td.classList.add("revealed");
+// }
 function showBoard() {
     const table = document.querySelector("table");
     table.innerHTML = "";
@@ -70,16 +74,28 @@ function showBoard() {
         for (let j = 0; j < n; j++) {
             const td = document.createElement("td");
             td.innerText = getText(i, j);
+            td.classList.toggle("revealed", board[i][j].isReveled);
             tr.appendChild(td);
         }
         table.appendChild(tr);
     }
 }
 
+function handleClick(e) {
+    const td = e.target;
+    if (!td.matches("td")) return;
+    const j = td.cellIndex; // cellIndex: Hanyadik oszlop?
+    const tr = td.parentNode;
+    const i = tr.rowIndex; // rowIndex: Hanyadik sor?
+    board[i][j].isReveled = true;
+    showBoard();
+}
+
 function startGame() {
     createBoard();
     showBoard();
     button.removeEventListener("click", startGame);
+    table.addEventListener("click", handleClick);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", startGame);
