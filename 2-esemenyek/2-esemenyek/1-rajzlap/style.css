@@ -1,0 +1,17 @@
+body {
+    padding: 1em;
+}
+
+svg {
+    border: 2px solid black;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+    display: block;
+    background-color: white;
+}
+
+div {
+    width: 100%;
+    /* overflow: auto; */
+}
