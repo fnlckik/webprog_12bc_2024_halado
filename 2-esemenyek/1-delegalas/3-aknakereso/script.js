@@ -38,6 +38,7 @@ function generateMines() {
 // Feltölt egy nxn-es mátrixot mezőkkel => board
 // field = {value: 0, isMine: false}
 function createBoard() {
+    board = [];
     for (let i = 0; i < n; i++) {
         const row = [];
         for (let j = 0; j < n; j++) {
@@ -88,12 +89,41 @@ function revealNeighbors(x, y) {
         for (let j = y-1; j <= y+1; j++) {
             if (0 <= i && 0 <= j && i < n && j < n && !board[i][j].isReveled) {
                 board[i][j].isReveled = true;
+                revealedCount++;
                 board[i][j].isFlagged = false;
                 if (board[i][j].value === 0) {
                     revealNeighbors(i, j);
                 }
             }
         }
+    }
+}
+
+function revealBoard() {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            board[i][j].isFlagged = false;
+            if (board[i][j].isMine) {
+                board[i][j].isReveled = true;
+            }
+        }
+    }
+    showBoard();
+}
+
+// Most fedtük fel az (i, j) mezőt.
+// Nyertünk? Vesztettünk?
+function checkGameEnd(i, j) {
+    if (board[i][j].isMine) {
+        console.log("Vesztettél!");
+        revealBoard();
+        table.rows[i].cells[j].style.backgroundColor = "red";
+        // window.close();
+        table.removeEventListener("click", handleClick);
+        table.removeEventListener("contextmenu", handleFlag);
+        button.addEventListener("click", startGame);
+    } else if (revealedCount + mineCount === n*n) {
+        console.log("Nyertél!");
     }
 }
 
@@ -105,10 +135,12 @@ function handleClick(e) {
     const i = tr.rowIndex; // rowIndex: Hanyadik sor?
     if (board[i][j].isFlagged) return;
     board[i][j].isReveled = true;
+    revealedCount++; // ???
     if (board[i][j].value === 0) {
         revealNeighbors(i, j);
     }
     showBoard();
+    checkGameEnd(i, j);
 }
 
 function handleFlag(e) {
