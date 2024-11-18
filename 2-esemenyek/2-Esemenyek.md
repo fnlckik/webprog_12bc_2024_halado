@@ -15,7 +15,7 @@
     `offsetY`: elem (e.target) tetejétől távolság
 
     <p align="center">
-    <img width="300" src="kepek/mouse-events.png">
+    <img width="300" src="./Kepek/coordinates.png">
     </py>
 
     ```html
