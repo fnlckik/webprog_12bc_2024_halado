@@ -71,3 +71,4 @@ Ezáltal különbség van az eseményt kiváltó elem (`event.target`) és az es
 
     f. A felhasználói élmény növelése érdekében üres mezőre kattintáskor fedjük fel annak szomszédait is automatikusan! `revealNeighbors(x, y)`
 
+    g. Vesztés esetén indítsunk el egy robbanás hangot! Ingyenes hangok: [Pixabay](https://pixabay.com/sound-effects/search/explosion/)
