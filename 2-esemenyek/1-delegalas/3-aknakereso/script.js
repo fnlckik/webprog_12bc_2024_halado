@@ -1,7 +1,7 @@
 const n = 12;
 const mineCount = 10;
 let board = []; // field = {value: ?2?, isMine: true/false}
-let revealedCount = 0;
+let revealedCount;
 
 const table = document.querySelector("table");
 
@@ -111,19 +111,30 @@ function revealBoard() {
     showBoard();
 }
 
+function endGame(message) {
+    console.log(message);
+    table.removeEventListener("click", handleClick);
+    table.removeEventListener("contextmenu", handleFlag);
+    button.addEventListener("click", startGame);
+}
+
 // Most fedtük fel az (i, j) mezőt.
 // Nyertünk? Vesztettünk?
+// <audio> elem létrehozása
+/*
+const audio = document.createElement("audio");
+audio.src = "./audio/explosion.mp3";
+*/
 function checkGameEnd(i, j) {
     if (board[i][j].isMine) {
-        console.log("Vesztettél!");
         revealBoard();
         table.rows[i].cells[j].style.backgroundColor = "red";
         // window.close();
-        table.removeEventListener("click", handleClick);
-        table.removeEventListener("contextmenu", handleFlag);
-        button.addEventListener("click", startGame);
+        endGame("Vesztettél!");
+        const audio = new Audio("./audio/explosion.mp3");
+        audio.play();
     } else if (revealedCount + mineCount === n*n) {
-        console.log("Nyertél!");
+        endGame("Nyertél!");
     }
 }
 
@@ -159,9 +170,18 @@ function handleFlag(e) {
 function startGame() {
     createBoard();
     showBoard();
+    revealedCount = 0;
     button.removeEventListener("click", startGame);
     table.addEventListener("click", handleClick);
     table.addEventListener("contextmenu", handleFlag);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", startGame);
+
+// "keydown": folyamatosan kiváltódik amíg nyomva tartjuk a gombot
+// "keyup": csak egyszer váltódik ki
+function handleKeyDown(e) {
+    console.log("Karakter:", e.key);
+    console.log("Billentyű kódja:", e.code);
+}
+window.addEventListener("keyup", handleKeyDown);
