@@ -1,0 +1,38 @@
+table, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 1em auto;
+}
+
+td {
+    padding: 0.4em;
+    width: 25px;
+    height: 25px;
+}
+
+button {
+    display: block;
+    margin: auto;
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    font-weight: bold;
+    text-shadow: 0 0 2px gray;
+}
+
+button:hover {
+    background-color: lightblue;
+    box-sizing: border-box;
+    text-shadow: none;
+}
+
+p {
+    margin: 1em 1em;
+    font-weight: bold;
+}
+
+.current-position {
+    background-color: lightgoldenrodyellow;
+}
