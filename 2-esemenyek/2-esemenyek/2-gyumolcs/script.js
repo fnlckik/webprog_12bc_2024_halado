@@ -8,6 +8,8 @@ const pos = { x: null, y: null };
 let remainingSteps = 12;
 let points = 0;
 
+document.querySelector("#steps span").innerText = remainingSteps;
+
 function randint(a, b) {
     return Math.floor(Math.random() * (b-a+1)) + a;
 }
@@ -34,6 +36,7 @@ function showBoard() {
         const tr = document.createElement("tr");
         for (const field of row) {
             const td = document.createElement("td");
+            // td.innerText = ???
             tr.appendChild(td);
         }
         table.appendChild(tr);
