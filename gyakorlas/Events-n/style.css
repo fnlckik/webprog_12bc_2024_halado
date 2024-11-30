@@ -1,0 +1,29 @@
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    cursor: pointer;
+    user-select: none;
+}
+
+table {
+    margin: 2em auto;
+}
+
+td {
+    width: 1.2em;
+    height: 1.2em;
+    text-align: center;
+}
+
+td:hover {
+    background-color: rgb(200, 200, 255);
+}
+
+td.black:hover {
+    background-color: rgb(0, 0, 80);
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
