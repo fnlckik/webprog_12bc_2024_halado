@@ -1,6 +1,18 @@
 const x = [2, 6, 5, 1, 6, -2, 12, -1, 12, 6, -5, 7]; // 12 elem
 console.log("Eredeti:", x);
 
+// Anonymous function
+/*
+function (e) {
+    return e * e;
+}
+*/
+
+// Lambda kifejezések: arrow function (nyíl függvény)
+// (e) => e * e;
+
+// Csak egy paraméter!
+// e => e * e;
 function square(e) {
     return e * e;
 }
@@ -14,16 +26,26 @@ function isNegative(e) {
 // ------------------------------------------------------
 // 2015 - ES6
 
+function pluszHarom(e) {
+    return e + 3;
+}
+
 // 1. Másolás - Adjuk meg a számok négyzeteit!
-const squares = [];
+const squares = x.map(e => e * e);
 console.log("Négyzetek:", squares);
 
 // 2. Kiválogatás - Adjuk meg a negatív elemeket!
-const negatives = [];
+// predicate: logikai értéket adó függvény
+const negatives = x.filter(e => e < 0);
 console.log("Negatívak:", negatives);
 
+// A számok négyzetei közül akarom a párosakat!
+// const evenSquares = squares.filter(e => e % 2 === 0);
+const evenSquares = x.map(e => e * e).filter(e => e % 2 === 0);
+console.log("Páros négyzetek:", evenSquares);
+
 // 3. Megszámolás - Negatívak száma
-const negativeCount = "";
+const negativeCount = x.filter(isNegative).length;
 console.log("Negatívak száma:", negativeCount);
 
 // 4. Eldöntés - Van-e páros?
@@ -43,7 +65,6 @@ const lastNegative = ""; // !!! 2022 !!!
 const lastNegativeIndex = "";
 console.log("Első negatív (hely, érték):", firstNegativeIndex, firstNegative);
 console.log("Utolsó negatív (hely, érték):", lastNegativeIndex, lastNegative);
-
 
 
 // ------------------------------------------------------
