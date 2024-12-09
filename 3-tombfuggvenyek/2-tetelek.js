@@ -49,34 +49,60 @@ const negativeCount = x.filter(isNegative).length;
 console.log("Negatívak száma:", negativeCount);
 
 // 4. Eldöntés - Van-e páros?
-const anyEven = "";
+const anyEven = x.some(e => e % 2 === 0);
 console.log("Van-e páros:", anyEven);
 
 // 5. Eldöntés (optimista) - Mindegyik páros?
-const everyEven = "";
+const everyEven = x.every(e => e % 2 === 0);
 console.log("Mindegyik páros:", everyEven);
 
 // 6. Keresés
 // a) Hol van az első negatív? Ha nincs, akkor a -1 helyen van.
 // b) Mennyi az értéke? Ha nincs, akkor undefined.
-const firstNegative = "";
-const firstNegativeIndex = "";
-const lastNegative = ""; // !!! 2022 !!!
-const lastNegativeIndex = "";
-console.log("Első negatív (hely, érték):", firstNegativeIndex, firstNegative);
-console.log("Utolsó negatív (hely, érték):", lastNegativeIndex, lastNegative);
+const firstNegative = x.find(isNegative);
+const firstNegativeIndex = x.findIndex(isNegative);
+const lastNegative = x.findLast(isNegative); // !!! 2022 !!!
+const lastNegativeIndex = x.findLastIndex(isNegative);
+console.log("Első negatív (hely, érték):", firstNegativeIndex+1, firstNegative);
+console.log("Utolsó negatív (hely, érték):", lastNegativeIndex+1, lastNegative);
 
 
 // ------------------------------------------------------
 // 7. Rendezzük az elemeket növekvő sorrendbe:
-const sorted = []; // !!! 2023 !!!
+
+function comparer(a, b) {
+    if (a < b) return -1
+    else if (a > b) return 1
+    else return 0;
+}
+
+function comparer2(a, b) {
+    /*
+    if (a < b) return a-b // negativ
+    else if (a > b) return a-b // pozitiv
+    else return a-b; // 0
+    */
+    return a - b;
+}
+const sorted = x.toSorted((a, b) => a - b); // !!! 2023 !!!
 console.log("Növekvő sorrend:", sorted);
 
 // Comparer function: (a, b)-ről képez le -1, 0, 1 elemekre
 // -1, ha a < b
 // 0, ha a === b
 // 1, ha a > b
-const evensFirst = [];
+
+function cf(a, b) {
+    if (a % 2 === 0 && b % 2 !== 0) {
+        return -1;
+    } else if (a % 2 !== 0 && b % 2 === 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+const evensFirst = x.toSorted(cf);
 console.log("Párosak előre sorrend:", evensFirst);
 
 
