@@ -1,4 +1,4 @@
-# 3-Játékok
+# 4-Játékok
 
 Adott egy tömb számítógépes játékok adataival:
 ```js
