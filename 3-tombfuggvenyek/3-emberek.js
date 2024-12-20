@@ -52,10 +52,31 @@ console.log("F7:", people.findLast(p => p.name[0] === "J").name);
 console.log("F8:", people.reduce((m, p) => p.age > m.age ? p : m, people[0]));
 
 // F9
-console.log("F9:", people.filter((p1, i) => people.some((p2, j) => i !== j && p1.age === p2.age)));
+// Imperatív megoldás
+/*
+let x = [];
+for (let i = 0; i < people.length; i++) {
+    let j = 0;
+    while (j < people.length && !(people[j].age === people[i].age && i !== j)) {
+        j++;
+    }
+    if (j < people.length) {
+        x.push(people[i]);
+    }
+}
+console.log(x);
+*/
+
+// Pedró Ádám megoldása!
+console.log("F9:", people.filter(p => people.some(p2 => p2.age === p.age && p !== p2)));
+
+// Nem Pedró Ádám megoldása!
+console.log("F9:", people.filter((p, i) => people.some((p2, j) => p2.age === p.age && i !== j)));
 
 // F10
-function hasA(name) {
-    return Array.from(name).some(c => c.toUpperCase() === "A");
+// console.log("F10:", people.filter(p => Array.from(p.name).some(c => c === "a" || c === "A")));
+
+function hasA(p) {
+    return Array.from(p.name).some(c => c.toUpperCase() === "A");
 }
-console.log("F10:", people.filter(p => hasA(p.name)).map(p => p.name));
+console.log("F10:", people.filter(p => hasA(p)).map(p => p.name));
