@@ -138,9 +138,16 @@ while (true) {
 }
 */
 
+// setTimeout => rekurzió
+/*
 function updateTime() {
     timeSpan.innerText = new Date().toLocaleTimeString();
     setTimeout(updateTime, 1000);
 }
 updateTime();
+*/
 
+function update() {
+    timeSpan.innerText = new Date().toLocaleTimeString();
+}
+setInterval(update, 1000);
