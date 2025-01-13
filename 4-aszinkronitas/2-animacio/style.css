@@ -27,7 +27,17 @@
 #loading div {
     background-color: lightgreen;
     width: 0;
+    animation: loading 3s forwards linear;
 }
+
+/* @keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+} */
 
 #wrapper {
     border: 1px solid black;
