@@ -1,0 +1,49 @@
+* {
+    font-family: Arial;
+}
+
+#buek {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    padding: 0.5em;
+    width: 50%;
+    margin: auto;
+    text-shadow: 0 0 2px black;
+    border: 1px solid black;
+}
+
+#loading, #loading div {
+    height: 2em;
+}
+
+#loading {
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+#loading div {
+    background-color: lightgreen;
+    width: 0;
+}
+
+#wrapper {
+    border: 1px solid black;
+    height: 200px;
+    position: relative;
+    width: 60%;
+    margin: auto;
+}
+
+#labda {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
