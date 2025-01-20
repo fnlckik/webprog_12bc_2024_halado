@@ -61,21 +61,23 @@ function getTime3(time) {
 
 function getTime2(time) {
     time = Math.round(time / 10).toString().padStart(4, "0");
-    console.log(time);
+    // console.log(time);
     return time.slice(0, 2) + ":" + time.slice(2);
 }
 
 function reduceTime(remaining, start) {
     const elapsed = Date.now() - start; // Ennyi idő telt el a mérés kezdete óta
-    remaining = 5000*60 - elapsed;
+    remaining = 5000 - elapsed;
     if (remaining < 0) remaining = 0;
     const timeSpan = document.querySelector("#time");
     // timeSpan.innerText = getTime(remaining); // 5000 => 05:00
-    timeSpan.innerText = getTime3(remaining);
-    if (remaining > 0) {
+    timeSpan.innerText = getTime2(remaining);
+    if (remaining > 0 && button.disabled === false) {
         setTimeout(() => {
             reduceTime(remaining, start)
         }, 10);
+    } else {
+        handleClick();
     }
 }
 
@@ -88,3 +90,16 @@ function handleStart() {
 
 const input = document.querySelector("input");
 input.addEventListener("click", handleStart);
+
+const resultSpan = document.querySelector("#result");
+function handleClick() {
+    input.disabled = true;
+    button.disabled = true;
+    if (input.value === "cat") {
+        resultSpan.innerText = "✅";
+    } else {
+        resultSpan.innerText = "❌";
+    }
+}
+const button = document.querySelector("button");
+button.onclick = handleClick;
