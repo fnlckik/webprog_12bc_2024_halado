@@ -1,15 +1,17 @@
-// callback: egy függvény paraméter, amit egy másik függvény meghív
-function result(callback) {
-    setTimeout(() => {
-        const p = Math.floor(Math.random() * 101); // [0, 100]
-        callback(p);
-    }, 1000);
+// Promise: igéret, hogy adok majd egy értéket
+// resolve: beteljesítés, feloldás
+function result() {
+    const promise = new Promise(resolve => {
+        setTimeout(() => {
+            const p = Math.floor(Math.random() * 101);
+            resolve(p);
+        }, 1000);
+    })
+    return promise;
 }
 
-// function print(p) {
-//     console.log(p);
-// }
-
-result(p => {
-    console.log(p);
+// "a promise egy thenable object"
+const promise = result();
+promise.then(point => {
+    console.log(point);
 });
