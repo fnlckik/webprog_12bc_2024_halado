@@ -18,7 +18,7 @@ function takeTrash(cb) {
     }, 100);
 }
 
-// Ez mi ez?
+// Callback hell (pyramid of doom)
 function houseWork() {
     walkDog(result => {
         console.log(result); // Kutya!
