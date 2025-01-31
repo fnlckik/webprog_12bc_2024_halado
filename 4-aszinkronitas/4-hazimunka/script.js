@@ -1,34 +1,43 @@
 // Kutya -> Mosogatás -> Szemét
 
-function walkDog(cb) {
-    setTimeout(() => {
-        cb("Kutya!");
-    }, 2500);
+function walkDog() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Kutya!");
+        }, 2500);
+    });
 }
 
-function washDishes(cb) {
-    setTimeout(() => {
-        cb("Mosogatás!");
-    }, 1000);
+function washDishes() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Mosogatás!");
+        }, 1000);
+    });
 }
 
-function takeTrash(cb) {
-    setTimeout(() => {
-        cb("Szemét!");
-    }, 100);
+function takeTrash() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Szemét!");
+        }, 100);
+    });
 }
 
-// Callback hell (pyramid of doom)
+// Promise chain
 function houseWork() {
-    walkDog(result => {
-        console.log(result); // Kutya!
-        washDishes(result => {
-            console.log(result); // Mosogatás!
-            takeTrash(result => {
-                console.log(result); // Szemét!
-            })
-        })
+    walkDog()
+    .then(message => {
+        console.log(message);
+        return washDishes();
     })
+    .then(message => {
+        console.log(message);
+        return takeTrash();
+    })
+    .then(message => {
+        console.log(message);
+    });
 }
 
 houseWork();

@@ -2,26 +2,26 @@
 
 function walkDog() {
     setTimeout(() => {
-        console.log("Kutya!");
+        return "Kutya!";
     }, 2500);
 }
 
 function washDishes() {
     setTimeout(() => {
-        console.log("Mosogatás!");
+        return "Mosogatás!";
     }, 1000);
 }
 
 function takeTrash() {
     setTimeout(() => {
-        console.log("Szemét!");
+        return "Szemét!";
     }, 100);
 }
 
 function houseWork() {
-    walkDog();
-    washDishes();
-    takeTrash();
+    console.log(walkDog());
+    console.log(washDishes());
+    console.log(takeTrash());
 }
 
 houseWork();
