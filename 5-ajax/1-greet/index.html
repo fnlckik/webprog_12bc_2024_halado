@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kliens-Szerver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+            <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+            <li><a href="https://www.w3schools.com/js/">JavaScript</a></li>
+            <li><a href="https://www.w3schools.com/php/">PHP</a></li>
+            <li><a href="https://www.w3schools.com/mysql/">MySQL</a></li>
+        </ul>
+    </nav>
+
+    <h1>Kliens - Szerver kommunikáció</h1>
+
+    <div class="flex">
+        <table></table>
+        <img src="client-server.png" alt="Kliens-szerver kapcsolat">
+    </div>
+
+    <h2>Bejelentkezés</h2>
+    <form action="http://localhost/greet-ajax" method="GET">
+        <input type="text" name="username" placeholder="Felhasználónév: " required>
+        <button type="submit">Belépés</button>
+    </form>
+    <div class="data hidden" id="adatok">
+
+    </div>
+
+    <div class="flex">
+        <img src="ajax.jpg" alt="AJAX">
+        <p>Eldöltött idő: <span id="time">0 mp</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

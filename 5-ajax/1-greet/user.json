@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Farkas Norbert",
+        "friend": 314,
+        "male": true,
+        "subjects": [
+            "matek", "webprog"
+        ]
+    },
+    {
+        "name": "Nagy Ádám",
+        "friend": 3,
+        "male": null,
+        "subject": [
+            "matek", "töri", "IKT", "webprog"
+        ]
+    }
+]

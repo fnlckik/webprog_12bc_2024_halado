@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+nav {
+    background-color: lightblue;
+    margin: 1em;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: flex;
+    flex-grow: 1;
+}
+
+nav ul a {
+    background-color: lightgoldenrodyellow;
+    padding: 1em;
+    flex-grow: 1;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    background-color: rgb(255, 255, 138);
+    text-decoration: underline;
+}
+
+table {
+    margin: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+img {
+    max-width: 300px;
+    margin: 2em;
+    flex-grow: 1;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+}
+
+form {
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5em;
+    background-color: lightcyan;
+}
+
+form *{
+    padding: 0.25em;
+    margin: 0.25em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Arial;
+    flex-wrap: wrap;
+}
+
+/* ----------------------- */
+
+.data {
+    background-color: rgb(216, 255, 216);
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+}
+
+#adatok button {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.data p {
+    margin: 1em;
+}
