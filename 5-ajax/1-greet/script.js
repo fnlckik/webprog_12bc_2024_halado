@@ -64,9 +64,7 @@ button.onclick = (e) => {
     const input = document.querySelector("form input");
     
     fetch(`http://localhost/greet-ajax/?username=${input.value}`)
-    .then(response => response.json())
-    .then(text => console.log(text));
-    
+    .then(response => console.log(response));
 }
 
 /*
