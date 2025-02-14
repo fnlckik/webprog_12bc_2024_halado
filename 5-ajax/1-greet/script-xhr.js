@@ -63,10 +63,21 @@ button.onclick = (e) => {
     e.preventDefault();
     const input = document.querySelector("form input");
     
-    fetch(`http://localhost/greet-ajax/?username=${input.value}`)
-    .then(response => response.json())
-    .then(text => console.log(text));
-    
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+        // console.log(xhr.readyState + " " + xhr.status);
+        if (xhr.status === 200) {
+            const data = JSON.parse(xhr.response);
+            show(data);
+        } else if (xhr.status === 404) {
+            error("Nincs ilyen felhasználó!");
+        }
+    }
+    xhr.onerror = () => {
+        error("Nem működik a szerver!");
+    }
+    xhr.open("GET", `http://localhost/greet-ajax/?username=${input.value}`);
+    xhr.send();
 }
 
 /*
