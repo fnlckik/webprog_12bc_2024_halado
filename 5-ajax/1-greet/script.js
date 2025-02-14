@@ -28,6 +28,24 @@ setInterval(() => {
 }, 1000);
 
 // ---------------------------------
+
+/*
+    <!-- Le kéne szedni róla a hidden osztályt! -->
+    <div class="data hidden" id="adatok">
+        <p>Név: Farkas Norbert</p>
+        <p>Ismerősök: 314</p>
+    </div>
+*/
+function show(data) {
+    document.querySelector("form").classList.add("hidden");
+    const div = document.querySelector("#adatok");
+    div.classList.remove("hidden");
+    div.innerHTML = `
+        <p>Név: ${data.name}</p>
+        <p>Ismerősök: ${data.friends}</p>
+        `;
+}
+
 // AJAX (Asynchronous JavaScript and XML)
 // XMLHttpRequest: kérést lebonyolító objektum
 const button = document.querySelector("form button");
@@ -40,6 +58,7 @@ button.onclick = (e) => {
     xhr.onload = () => {
         const data = JSON.parse(xhr.response);
         console.log(data);
+        show(data);
     }
     xhr.send();
 }
