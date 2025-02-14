@@ -48,10 +48,10 @@ function show(data) {
     div.classList.remove("error");
 }
 
-function error(data) {
+function error(text) {
     const div = document.querySelector("#adatok");
     div.classList.remove("hidden");
-    div.innerText = data.error;
+    div.innerText = text;
     div.classList.add("error");
     div.classList.remove("data");
 }
@@ -64,16 +64,45 @@ button.onclick = (e) => {
     const input = document.querySelector("form input");
     
     const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+        // console.log(xhr.readyState + " " + xhr.status);
+        if (xhr.status === 200) {
+            const data = JSON.parse(xhr.response);
+            show(data);
+        } else if (xhr.status === 404) {
+            error("Nincs ilyen felhasználó!");
+        }
+    }
+    xhr.onerror = () => {
+        error("Nem működik a szerver!");
+    }
     xhr.open("GET", `http://localhost/greet-ajax/?username=${input.value}`);
+    xhr.send();
+}
+
+/*
+    const xhr = new XMLHttpRequest();
     xhr.onload = () => {
         const data = JSON.parse(xhr.response);
         console.log(data);
-        
-        if (data.name) {
-            show(data);
-        } else {
-            error(data);
-        }
+        show(data);
     }
+    xhr.open("GET", `http://localhost/greet-ajax/?username=${input.value}`);
     xhr.send();
+*/
+
+// Végeztünk a kéréssel ÉS Minden oké!
+/*
+xhr.onreadystatechange = () => {
+    console.log(xhr.readyState + " " + xhr.status);
+    // Végeztünk a kéréssel ÉS Minden oké!
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        const data = JSON.parse(xhr.response);
+        show(data);
+    } else if (xhr.readyState === 4 && xhr.status === 0) {
+        error("Nem működik a szerver!");
+    } else if (xhr.readyState === 4 && xhr.status === 404) {
+        error("Nincs ilyen felhasználó!");
+    }
 }
+*/
