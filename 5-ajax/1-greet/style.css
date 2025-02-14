@@ -94,6 +94,15 @@ form *{
     margin: auto;
 }
 
+.error {
+    margin: 5px auto;
+    padding: 5px;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    border: 1px solid black;
+}
+
 #adatok button {
     padding: 0.5em;
     margin: 0.5em;

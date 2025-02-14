@@ -44,6 +44,16 @@ function show(data) {
         <p>Név: ${data.name}</p>
         <p>Ismerősök: ${data.friends}</p>
         `;
+    div.classList.add("data");
+    div.classList.remove("error");
+}
+
+function error(data) {
+    const div = document.querySelector("#adatok");
+    div.classList.remove("hidden");
+    div.innerText = data.error;
+    div.classList.add("error");
+    div.classList.remove("data");
 }
 
 // AJAX (Asynchronous JavaScript and XML)
@@ -58,7 +68,12 @@ button.onclick = (e) => {
     xhr.onload = () => {
         const data = JSON.parse(xhr.response);
         console.log(data);
-        show(data);
+        
+        if (data.name) {
+            show(data);
+        } else {
+            error(data);
+        }
     }
     xhr.send();
 }
