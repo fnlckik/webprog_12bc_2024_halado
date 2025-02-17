@@ -48,7 +48,7 @@ function show(data) {
     div.classList.remove("error");
 }
 
-function error(text) {
+function showError(text) {
     const div = document.querySelector("#adatok");
     div.classList.remove("hidden");
     div.innerText = text;
@@ -57,39 +57,42 @@ function error(text) {
 }
 
 // AJAX (Asynchronous JavaScript and XML)
-// XMLHttpRequest: kérést lebonyolító objektum
 const button = document.querySelector("form button");
 button.onclick = (e) => {
     e.preventDefault();
     const input = document.querySelector("form input");
     
     fetch(`http://localhost/greet-ajax/?username=${input.value}`)
-    .then(response => console.log(response));
+    .then(response => {
+        if (response.status === 404) {
+            throw new Error("Nincs ilyen felhasználó!");
+        }
+        return response.json();
+    })
+    .then(data => show(data))
+    .catch(error => {
+        // console.log(error.name);
+        if (error instanceof TypeError) {
+            showError("Nem működik a szerver!");
+        } else {
+            showError(error.message)
+        }
+    });
 }
 
 /*
-    const xhr = new XMLHttpRequest();
-    xhr.onload = () => {
-        const data = JSON.parse(xhr.response);
-        console.log(data);
-        show(data);
-    }
-    xhr.open("GET", `http://localhost/greet-ajax/?username=${input.value}`);
-    xhr.send();
+fetch(`http://localhost/greet-ajax/?username=${input.value}`)
+.then(response => response.json())
+.then(data => show(data));
 */
 
-// Végeztünk a kéréssel ÉS Minden oké!
 /*
-xhr.onreadystatechange = () => {
-    console.log(xhr.readyState + " " + xhr.status);
-    // Végeztünk a kéréssel ÉS Minden oké!
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        const data = JSON.parse(xhr.response);
-        show(data);
-    } else if (xhr.readyState === 4 && xhr.status === 0) {
-        error("Nem működik a szerver!");
-    } else if (xhr.readyState === 4 && xhr.status === 404) {
-        error("Nincs ilyen felhasználó!");
-    }
-}
+fetch(`http://localhost/greet-ajax/?username=${input.value}`)
+.then(response => {
+    return response.text();
+})
+.then(text => {
+    const data = JSON.parse(text);
+    show(data);
+});
 */
