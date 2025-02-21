@@ -51,28 +51,42 @@ function showError(text) {
 
 // AJAX (Asynchronous JavaScript and XML)
 const button = document.querySelector("form button");
-button.onclick = async (e) => {
+button.onclick = (e) => {
     e.preventDefault();
     const input = document.querySelector("form input");
     
-    try {
-        const response = await fetch(`http://localhost/greet-ajax/?username=${input.value}`);
+    fetch(`http://localhost/greet-ajax/?username=${input.value}`)
+    .then(response => {
+        // response.status === 404
         if (!response.ok) {
             throw new Error("Nincs ilyen felhasználó!");
         }
-        const data = await response.json();
-        show(data);
-    } catch (error) {
+        return response.json();
+    })
+    .then(data => show(data))
+    .catch(error => {
+        // console.log(error.name);
         if (error instanceof TypeError) {
             showError("Nem működik a szerver!");
         } else {
             showError(error.message);
         }
-    }
-};
+    });
+}
 
 /*
-const response = await fetch(`http://localhost/greet-ajax/?username=${input.value}`);
-const data = await response.json();
-show(data);
+fetch(`http://localhost/greet-ajax/?username=${input.value}`)
+.then(response => response.json())
+.then(data => show(data));
+*/
+
+/*
+fetch(`http://localhost/greet-ajax/?username=${input.value}`)
+.then(response => {
+    return response.text();
+})
+.then(text => {
+    const data = JSON.parse(text);
+    show(data);
+});
 */
