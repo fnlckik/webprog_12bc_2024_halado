@@ -29,13 +29,6 @@ setInterval(() => {
 
 // ---------------------------------
 
-/*
-    <!-- Le kéne szedni róla a hidden osztályt! -->
-    <div class="data hidden" id="adatok">
-        <p>Név: Farkas Norbert</p>
-        <p>Ismerősök: 314</p>
-    </div>
-*/
 function show(data) {
     document.querySelector("form").classList.add("hidden");
     const div = document.querySelector("#adatok");
@@ -64,7 +57,8 @@ button.onclick = (e) => {
     
     fetch(`http://localhost/greet-ajax/?username=${input.value}`)
     .then(response => {
-        if (response.status === 404) {
+        // response.status === 404
+        if (!response.ok) {
             throw new Error("Nincs ilyen felhasználó!");
         }
         return response.json();
