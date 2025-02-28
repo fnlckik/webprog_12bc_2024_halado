@@ -27,5 +27,32 @@ async function getFruitsAsync() {
     const data = await response.json();
     show(data);
 }
+
+// fetch + then (Promise chain)
+function getFruitsFetch() {
+    fetch(URL)
+    .then(response => response.json())
+    .then(data => show(data));
+}
+
+function getFruitsXHR() {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+        const data = JSON.parse(xhr.response);
+        show(data);
+    }
+    xhr.open("GET", URL);
+    xhr.send();
+}
+
+/*
+xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+        const data = JSON.parse(xhr.response);
+        show(data);
+    }
+}
+*/
+
 const button = document.querySelector("button");
-button.addEventListener("click", getFruitsAsync);
+button.addEventListener("click", getFruitsXHR);
