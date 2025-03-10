@@ -11,6 +11,13 @@ function show(data) {
         <p>Város: ${data.location.name}</p>
         <p>Ország: ${data.location.country}</p>
         <p>Hőmérséklet: ${data.current.temp_c} °C</p>
+        <p>Szélsebesség: ${data.current.wind_kph} km/h</p>
+        <p>Csapadék: ${data.current.precip_mm} mm</p>
+        <p>Páratartalom: ${data.current.humidity}%</p>
+        <div>
+            <span>Égbolt: ???</span>
+            <img>
+        </div>
     `;
 }
 
@@ -20,7 +27,9 @@ async function handleClick() {
     try {
         const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}`);
         const data = await response.json();
-        if (response.status === 400) {
+        console.log(data);
+        // response.status === 400
+        if (!response.ok) {
             // throw new Error(data.error.code);
             throw new Error(data.error.message);
         }
