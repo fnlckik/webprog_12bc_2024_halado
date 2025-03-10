@@ -1,0 +1,47 @@
+{
+    "location": {
+        "name": "Paris",
+        "region": "Ile-de-France",
+        "country": "France",
+        "lat": 48.8667,
+        "lon": 2.3333,
+        "tz_id": "Europe/Paris",
+        "localtime_epoch": 1741608106,
+        "localtime": "2025-03-10 13:01"
+    },
+    "current": {
+        "last_updated_epoch": 1741608000,
+        "last_updated": "2025-03-10 13:00",
+        "temp_c": 12.0,
+        "temp_f": 53.6,
+        "is_day": 1,
+        "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+            "code": 1003
+        },
+        "wind_mph": 7.6,
+        "wind_kph": 12.2,
+        "wind_degree": 230,
+        "wind_dir": "SW",
+        "pressure_mb": 1002.0,
+        "pressure_in": 29.59,
+        "precip_mm": 0.01,
+        "precip_in": 0.0,
+        "humidity": 94,
+        "cloud": 75,
+        "feelslike_c": 10.7,
+        "feelslike_f": 51.3,
+        "windchill_c": 11.5,
+        "windchill_f": 52.7,
+        "heatindex_c": 12.7,
+        "heatindex_f": 54.8,
+        "dewpoint_c": 6.2,
+        "dewpoint_f": 43.1,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "uv": 1.0,
+        "gust_mph": 8.8,
+        "gust_kph": 14.2
+    }
+}

@@ -17,9 +17,20 @@ function show(data) {
 const button = document.querySelector("button");
 async function handleClick() {
     const city = document.querySelector("input").value;
-    const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}`);
-    const data = await response.json();
-    console.log(data);
-    show(data);
+    try {
+        const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}`);
+        const data = await response.json();
+        if (response.status === 400) {
+            // throw new Error(data.error.code);
+            throw new Error(data.error.message);
+        }
+        show(data);
+    } catch (error) {
+        // if (error.message === "1006") {
+        //     console.log("Nincs ilyen város!");
+        // }
+        // alert(error.message);
+        console.log(error.message);
+    }
 }
 button.addEventListener("click", handleClick);
