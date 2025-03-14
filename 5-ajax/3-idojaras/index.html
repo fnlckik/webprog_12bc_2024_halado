@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img {
+            font-size: 1em;
+            height: 1em;
+            transform: scale(2);
+        }
+        div div {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <input type="text" value="Cegled">
-    <button>Aktuális időjárás!</button>
+    <button id="current">Aktuális időjárás!</button>
+    <button id="forecast">Holnapi időjárás!</button>
     <div></div>
     <script src="script.js"></script>
 </body>

@@ -15,17 +15,17 @@ function show(data) {
         <p>Csapadék: ${data.current.precip_mm} mm</p>
         <p>Páratartalom: ${data.current.humidity}%</p>
         <div>
-            <span>Égbolt: ???</span>
-            <img>
+            <span>Égbolt: ${data.current.condition.text}</span>
+            <img src=${data.current.condition.icon}>
         </div>
     `;
 }
 
-const button = document.querySelector("button");
+const button = document.querySelector("#current");
 async function handleClick() {
     const city = document.querySelector("input").value;
     try {
-        const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}`);
+        const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}&lang=hu`);
         const data = await response.json();
         console.log(data);
         // response.status === 400
