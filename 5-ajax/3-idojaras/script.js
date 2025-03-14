@@ -5,7 +5,7 @@
 const APIKEY = "c75e43014d424a7a92a231046251802";
 const URL = "http://api.weatherapi.com/v1"; // /current.json
 
-function show(data) {
+function showCurrent(data) {
     const div = document.querySelector("div");
     div.innerHTML = `
         <p>Város: ${data.location.name}</p>
@@ -21,8 +21,8 @@ function show(data) {
     `;
 }
 
-const button = document.querySelector("#current");
-async function handleClick() {
+const currentButton = document.querySelector("#current");
+async function getCurrent() {
     const city = document.querySelector("input").value;
     try {
         const response = await fetch(`${URL}/current.json?key=${APIKEY}&q=${city}&lang=hu`);
@@ -42,4 +42,14 @@ async function handleClick() {
         console.log(error.message);
     }
 }
-button.addEventListener("click", handleClick);
+currentButton.addEventListener("click", getCurrent);
+
+// --------------------------------------------
+const forecastButton = document.querySelector("#forecast");
+async function getForecast() {
+    const city = document.querySelector("input").value;
+    const response = await fetch(`${URL}/forecast.json?key=${APIKEY}&q=${city}&days=3`);
+    const data = await response.json();
+    console.log(data);
+}
+forecastButton.addEventListener("click", getForecast);
