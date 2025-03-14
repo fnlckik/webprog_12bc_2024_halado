@@ -33,7 +33,7 @@ async function getCurrent() {
             // throw new Error(data.error.code);
             throw new Error(data.error.message);
         }
-        show(data);
+        showCurrent(data);
     } catch (error) {
         // if (error.message === "1006") {
         //     console.log("Nincs ilyen város!");
@@ -45,11 +45,20 @@ async function getCurrent() {
 currentButton.addEventListener("click", getCurrent);
 
 // --------------------------------------------
+
+function showForecast(data) {
+    const div = document.querySelector("div");
+    div.innerHTML = `
+        <p>Hőmérséklet (átlag): ${data.day.avgtemp_c} C°</p>
+        <p>Csapadék valószínűsége: ${data.day.daily_chance_of_rain}%</p>
+    `;
+}
+
 const forecastButton = document.querySelector("#forecast");
 async function getForecast() {
     const city = document.querySelector("input").value;
     const response = await fetch(`${URL}/forecast.json?key=${APIKEY}&q=${city}&days=3`);
     const data = await response.json();
-    console.log(data);
+    showForecast(data.forecast.forecastday[1]);
 }
 forecastButton.addEventListener("click", getForecast);
