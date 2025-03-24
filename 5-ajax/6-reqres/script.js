@@ -15,6 +15,11 @@ async function sendDataFetch() {
     console.log(data);
 }
 
+// function handleLoad(xhr) {
+//     const data = JSON.parse(xhr.response);
+//     console.log(data);
+// };
+
 async function sendDataXHR() {
     const name = document.querySelector("#name").value;
     const job = document.querySelector("#job").value;
@@ -22,11 +27,13 @@ async function sendDataXHR() {
     // console.log(user);
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://reqres.in/api/users");
+    // xhr.addEventListener("load", () => { handleLoad(xhr) });
     xhr.onload = () => {
-       const data = JSON.parse(xhr.response);
-       console.log(data);
-    };
+        const data = JSON.parse(xhr.response);
+        console.log(data);
+    }
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(user));
 }
 button.addEventListener("click", sendDataXHR);
+// button.onclick = sendDataXHR;
