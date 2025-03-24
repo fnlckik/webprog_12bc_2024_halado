@@ -1,0 +1,152 @@
+[
+    {
+        "name": "II. József",
+        "start": 1780,
+        "years": 10,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Joseph-II.jpg",
+        "laws": [
+            {
+                "title": "Türelmi rendelet",
+                "year": 1781
+            },
+            {
+                "title": "Nyelvrendelet",
+                "year": 1784
+            },
+            {
+                "title": "Jobbágyrendelet",
+                "year": 1785
+            }
+        ]
+    },
+    {
+        "name": "I. Ferdinánd",
+        "start": 1526,
+        "years": 38
+    },
+    {
+        "name": "I. Szent László",
+        "start": 1077,
+        "years": 18
+    },
+    {
+        "name": "Hunyadi Mátyás",
+        "start": 1458,
+        "years": 32,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Hunyadi-Matyas.jpg",
+        "laws": [
+            {
+                "title": "Füstpénz bevezetése",
+                "year": 1467
+            },
+            {
+                "title": "Bíráskodási reform",
+                "year": 1486
+            }
+        ]
+    },
+    {
+        "name": "Mária Terézia",
+        "start": 1740,
+        "years": 40,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Maria-Terezia.jpg",
+        "laws": [
+            {
+                "title": "Ratio Educationis",
+                "year": 1777
+            },
+            {
+                "title": "Úrbéri rendelet",
+                "year": 1767
+            },
+            {
+                "title": "Orvosi kar alapítása",
+                "year": 1769
+            }
+        ]
+    },
+    {
+        "name": "Ferenc József",
+        "start": 1848,
+        "years": 68,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Ferenc-Jozsef.jpg",
+        "laws": [
+            {
+                "title": "A kiegyezés törvénye",
+                "year": 1867
+            },
+            {
+                "title": "Nemzetiségi törvény",
+                "year": 1868
+            },
+            {
+                "title": "Horvát–magyar kiegyezés",
+                "year": 1868
+            },
+            {
+                "title": "Koronázási emléktörvény",
+                "year": 1907
+            }
+        ]
+    },
+    {
+        "name": "IV. Béla",
+        "start": 1235,
+        "years": 35,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Bela-IV.jpeg",
+        "laws": [
+            {
+                "title": "Királyi birtokok visszavétele",
+                "year": 1235
+            },
+            {
+                "title": "Várépítési program",
+                "year": 1242
+            },
+            {
+                "title": "A kunok betelepítése",
+                "year": 1246
+            }
+        ]
+    },
+    {
+        "name": "Luxemburgi Zsigmond",
+        "start": 1387,
+        "years": 50,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Luxemburgi-Zsigmond.jpg",
+        "laws": [
+            {
+                "title": "Királyi tetszvényjog",
+                "year": 1404
+            },
+            {
+                "title": "Budai mérték bevezetése",
+                "year": 1405
+            },
+            {
+                "title": "Telekkatonaság bevezetése",
+                "year": 1397
+            },
+            {
+                "title": "Decretum Maius",
+                "year": 1435
+            }
+        ]
+    },
+    {
+        "name": "I. Nagy Lajos",
+        "start": 1342,
+        "years": 40,
+        "portrait": "http://ckikwebprog.webtelek.hu/kings/Nagy-Lajos.jpg",
+        "laws": [
+            {
+                "title": "Ősiség törvénye",
+                "year": 1351
+            },
+            {
+                "title": "Kilenced törvénye",
+                "year": 1351
+            }
+        ]
+    }
+]

@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+}
+
+h1 {
+    margin: 1em 0 0.5em;
+}
+
+button, select, option {
+    padding: 0.5em;
+}
+
+
+
+/* Összes király adata */
+
+table {
+    margin: 1em auto;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+
+td img {
+    width: 150px;
+}
+
+
+
+/* Király adatai */
+
+.card {
+    border: 1px solid black;
+    margin: 1em auto;
+    padding: 1em;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card img {
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    background-color: rgba(34, 255, 0, 0.083);
+    border: 1px solid black;
+    padding: 1em;
+}
+
+
+/* Adat rögzítése */
+
+fieldset {
+    padding: 1em 0.5em;
+    width: fit-content;
+}
+
+fieldset button {
+    float: right;
+}
+
+fieldset input {
+    padding: 0.25em;
+}
+
+fieldset input[type="number"] {
+    width: 6em;
+}
+
+legend {
+    font-weight: bold;
+}
+
+br {
+    content: "";
+    display: block;
+    margin: 1em 0;
+}

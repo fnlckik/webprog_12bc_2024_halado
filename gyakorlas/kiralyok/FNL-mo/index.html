@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Királyok</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Összes király adatai</h1>
+    <button id="all">Adatok kérése</button>
+    <table>
+
+    </table>
+    
+    <h1>Király keresése</h1>
+    <select>
+        <option>II. József</option>
+        <option>Hunyadi Mátyás</option>
+        <option>Mária Terézia</option>
+        <option>Ferenc József</option>
+        <option>IV. Béla</option>
+        <option>Luxemburgi Zsigmond</option>
+        <option>I. Nagy Lajos</option>
+    </select>
+    <button id="search">Keresés</button>
+    <div>
+
+    </div>
+
+    <h1>Adat rögzítése</h1>
+    <fieldset>
+        <legend>Király adatai</legend>
+        <label>
+            Király neve:
+            <input id="nev" type="text" placeholder="Pl.: Könyves Kálmán" value="Könyves Kálmán">
+        </label>
+        <br>
+        <label>
+            Uralkodás kezdete:
+            <input id="kezdes" type="number" placeholder="Pl.: 1095" value="1095">
+        </label>
+        <br>
+        <label>
+            Hány évig uralkodott?
+            <input id="evek" type="number" placeholder="Pl.: 21" value="21">
+        </label>
+        <br>
+        <button id="create">Küldés</button>
+    </fieldset>
+</body>
+</html>
