@@ -1,0 +1,11 @@
+$x: 10;
+
+body {
+    margin: 5px
+}
+
+@for $i from 1 through 10 {
+    .m-#{$i} {
+        margin: calc($i*$x)px
+    }
+}
